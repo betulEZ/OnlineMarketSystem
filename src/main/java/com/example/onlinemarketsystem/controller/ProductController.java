@@ -20,4 +20,13 @@ public class ProductController {
     public List<Product> getAllStudents(){
         return service.getAllProduct();
     }
+    @PutMapping("/{id}")
+    public Product update(@PathVariable String id,@RequestBody Product product) {
+        return service.update(id, product);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteStudentById(@PathVariable String id){
+        service.deleteById(id);
+    }
+
 }
